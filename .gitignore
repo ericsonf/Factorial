@@ -363,3 +363,9 @@ FodyWeavers.xsd
 
 # VS Code files
 .vscode/
+
+# Rider files
+.idea/
+
+#MacOs file
+.DS_Store

@@ -8,8 +8,8 @@ namespace Factorial.Controllers
     {
         [HttpGet]
         public IActionResult Get(uint number) =>
-            number < 1 || number > 65
+            number is < 1 or > 65
                 ? BadRequest("The number must be between 1 and 65.")
-                : Ok($"The factorial of the number {number} is {new Factorial().Calculate(number)}.") as IActionResult;
+                : Ok($"The factorial of the number {number} is {Factorial.Calculate(number)}.");
     }
 }

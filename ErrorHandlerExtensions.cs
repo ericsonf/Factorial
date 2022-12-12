@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
-using System.Net;
 
 namespace Factorial
 {
@@ -23,7 +23,7 @@ OS: {Environment.OSVersion.VersionString}");
                         context.Response.ContentType = "application/json";
 
                         var json = (context.Response.StatusCode, Message: "Internal Server Error");
-                        await context.Response.WriteAsync(JsonConvert.SerializeObject(json));
+                        await context.Response.WriteAsync(JsonConvert.SerializeObject(value: json));
                     }
                 });
             });
